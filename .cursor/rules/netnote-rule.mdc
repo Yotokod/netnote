@@ -1,0 +1,4 @@
+---
+Description: Le projet est divisé en 2 dossier représentant le backend en Laravel et le frontend en VueJS. Les détails du projet son dans le fichier suivant /netnote-frontend/feuille-de-route-school.txt. Avant d'exécuter une tâche analyse les fichiers du projet concerné afin de vérifier la structure et de t'adapter en fonction de ce dernier.  Analyse également l'historique, de la discussion afin de mieux comprendre la situation. Si la tache consiste à générer du code, créer ou éditer des fichiers, ne fais pas de commentaires ou de résumés de tes actions dans le chat. Etablis juste la to-do liste et préviens quand tu as terminé l'exécution.
+alwaysApply: true
+---

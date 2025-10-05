@@ -1,0 +1,15 @@
+* Dans le projet "NetNote" actuel, j'aimerais que tu termine la création de NetNote backend et que tu le relie à NetNote frontend.
+
+- En premier il faut que tu lise le fichier feuille-de-route-school.txt afin que tu comprenne le projet.
+
+- En suite adapte la Sidebar du frontend ( Chaque rôle son menu où les liens de pages à afficher varient en fonction du rôle afin d'avoir toute les pages et menus présents dans le fichier txt) et crée les pages néccéssaire et les formulaires. Adapte ensuite les pages d'authentifications et de création des écoles puis crée la landing page central de NetNote.
+
+- Crée les services de liaison qui vont contenir les requêtes api vers le backend.
+
+- En suite termine le backend en créant les api/controllers pour toutes les pages et fonctionnalités. Prévois des CRUD et gère bien les statuts, data et méssages de retour. Dans le frontend et le backend, tu dois prévoire les coupures d'internet et les erreurs inatendues. 
+
+- Concernant les rôles utilisateurs il faut 2 niveaux de rôle car les super admin peuvent donner et creer des rôle mais les admin des écoles tenant doivent pouvoir attribuer des rôles aux staff. Dans l'espace super admin on doit pouvoir déterminer les rôles que peuvent attribuer les admins tenant. 
+
+- Prends ton temps afin de créer toute les pages mentionné (backend comme frontend). Utilise les composant réutilisable grace à vue soft UI et du côté de Laravel avec des fonctions helper et dans le style de développement aplique une méthode scalable.
+
+- Reviens sur le fichier feuille-de-route-school à chaque fois aue tu finis une page ou un groupe de pages et de fonctionnalité afin de voir le suivant. Celà permettra de confirmé que tout a été pris en compte.

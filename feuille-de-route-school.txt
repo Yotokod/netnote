@@ -1,0 +1,146 @@
+Tu es un dévéloppeur sénior et expérimenté. Avec tes compétence, j'aimerais que tu crée une plateforme saas avec vuejs, laravel et/ou filament. Ecris un code propre, robuste et scalable. 
+
+Objectif: "NetNote" est une plateforme SaaS multi-tenant de gestion scolaire destinée aux établissements d’enseignement. L’objectif est de fournir un écosystème numérique complet qui couvre la gestion administrative, pédagogique, financière et communicationnelle des écoles, avec une expérience moderne et fluide adaptée au contexte africain.
+
+- Page d'acceuil: landing Page (Avec bouto d'appel à l'action, affichages des plans ou forfait, etc...)
+
+Liste des menu (sidebar), pages et formulaires des rôles important:
+
+//////////////////////////////////SUPER ADMIN/////////////////////////////////////
+
+-Dashboard super admin
+  *Sidebar Super Admin
+
+     - Dashboard (Vue d'ensemble super admin): (stats globales : nombre total d’écoles, nombre d’élèves inscrits, nombre de professeurs actifs, statistiques financières globales, nombre de paiements effectués, top 5 écoles les plus actives, courbe d’évolution des inscriptions, alertes systèmes et notifications récentes, Barres de progression des école avec les meilleurs notes, Filtre par école, par classe, série, ville et genre ).
+
+     - Gestion des écoles 
+
+     - Paramètres (Pays, Villes, Religions, Genres, Années, Mois, Genre, Nationalités, Types de classes, Types de matières, Trimestres/Semestres, Rôles internes école [comptable, Surveillant, Surveillant adjoint, etc...], Statuts élèves, Statuts paiements, Niveaux scolaires, Classes(Correspond au niveau scolaire), Séries, Matières, etc... )
+
+     - Templates (Landing page) (Liste des templates, Bouton d'ajout de template, bouton de prévisualisation, d'édition et de suppression)
+
+     - Template (Bulletins)  (Liste des templates, Bouton d'ajout de template, bouton de prévisualisation, d'édition et de suppression)  [Les templates des pages d'acceuil et de bulletins sont rajouter dans le dashboard super admin avec des marqueur permettant aux écoles de modifier les infos à afficher dans cette page tels que, les frais de scolarité, les images, les avis, les contacts, sections a propos, etc... les longues infos néccéssitant une page doivent être affichées en popup (Comme les politiques, page à propos, conditions, etc...). Le champs de rajout de template nous permet de mettre un modèle bootstrap et propose automatiquement des shortcodes pour déterminer les zones qui seront relié aux infos enregistré par les écoles dans la base de donnée. ]
+
+     - Languages (Editer les textes du saas pour chaque langue stocké dans les json file, possibilté de rajouter une langue, Pouvoir choisir langue par defaut)
+
+     - Thème (Les couleurs principaux et la police d'ecriture et d'autre paramèttres [Activer/désactiver Double authentification, langue par defaut, etc...]) 
+
+     - Tarifs & Plans (Liste des fonctionnalité, Liste des plans + tarif + fonctionnalité)
+
+     - Historique de facturation
+
+     - Logs & Audits
+
+     - Notifications globales
+
+     - Gestion des intégration (Api ia et autre intégrations paiements et autres)
+
+     - Mon profiles (Editition du profiles et changement de mot de passe)
+
+     - Gestion des utilisateur et rôle classique (Possibilité de voir les stats et les page visité par chaque utilisateurs)
+
+
+//////////////////////////////////////////////// ECOLE TENANT ////////////////////////////////////////////////
+
+- Dashboard école (tenant)
+  *Sidebar Administrateur École
+
+      - Dashboard acceuil (Vue d'ensemble école) ( card  avec Nombre d'élève en dessous barre avec le nombre de fille et le nombre de garcons, nombre de prof, nombre de salle de cours, graphique d'évolution des programmes scolaire filtrable par prof, salle et année-scolaire", Graphique de performance par matière, salle et année-scolaire )
+
+      - À propos (Elements à propos: Date de fondation, Nom du fondateur, Nom de l'école, images(Pouvoir ajouter max:10), logo, )
+
+      - Année-scolaire (Tableau liste des année scolaire, Bouton configurer une année scolaire (popup): Sélection d'année1, Sélectionner année2, Date de rentré, Date de vaccance, Bouton de modification (popup) )
+
+      - Élèves (Tableau liste des élèves avec filtre par salle, série et classe [Possibilité dans le tableau d'assigner une salle à un élève avec un bouton dans la colonne salle, de pouvoir voir le bulletin, Afficher scolarité payé et non payé], Bouton d'ajout d'élève en popup(Nom, prénom, matricule[auto en background], Date de naissance, Genre, Nationnalité, réligion, Liste des parents [Type de parent, Nom, Prénom, Numero de tel1, Numero de tel2, Email, Adresse], etc... ) )
+
+      - Professeurs (Nom, prénom, Email, tel1, tel2, Adresse )
+
+      - Staff (Rôle interne école , Nom, prénom, Email, tel1, tel2, Adresse, etc... )
+
+      - Salles de cours (Libellé, Classe, Série) [Possibilité de créer une salle, filtrer et modifier]
+
+      - Exam & Notes (Tableau liste exam avec type d'examen, note maximum, note minumum, matière, classe, salle, Visualiser/télécharger fiche de note etc... filtrable par Salle [Dans la colonne action rajouter un bouton envoyer les notes (3 choix de sélection: whatsapp, email ou sms) ], matière, etc.., Bouton ajouter des notes avec un popup qui affiche des éléments de filtre (salle, matière, série) afin d'afficher en dessous la liste des élève de la salle avec 2 champs devant chaque élève: Note et dénominateur sur [10,20,100, etc...] On enrégistre les notes dans une table pivot avec exam_id et on garde une trace dans la table exam qui s'affiche dans le tableau.)
+
+      - Emploi du temps (Afficher l'emploi du temps dans un calendrier [en filtrant par salle, classe, matièreetc...], Possibilité de modifier ou Configurer un emploi du temp en Associant, un prof, une salle une matière, une classe, séries,  )
+
+      - Scolarité (Stats des mouvements de scolarités par tranche par année scolaire et salle, Listes des élèves n'ayant pas soldé,  )
+
+      - Historique Transactions
+
+      - Notifications (En interne propre à l'école)
+
+      - Punitions & Récompenses
+
+      - Paramètres école 
+
+      - Mon profile
+
+
+///////////////////////////////////////////////////////////////////// FINANCIER //////////////////////////////////////////////////////////////
+
+ - Dashboard financier (tenant)
+  *Sidebar Financier
+
+      - Dashboard (vue d'ensemble financier)
+
+      - Scolarité 
+
+      - Historique Transactions
+
+      - Gestion financière (Dépot et retrait de fond avec type de paiement et motif)
+
+      - Salle de cour
+
+      - Notifications 
+
+      - Emploi du temps
+
+      - Rapports comptable
+
+      - Mon profile
+
+
+////////////////////////////////////// PROFESSEUR ///////////////////////////////////////
+
+  - Dashboard professeur 
+   *Sidebar professeur     
+
+      - Dashboard (vue d'ensemble professeur)
+
+      - Emploi du temps (Affichage uniquement du calendrier avec possibilité de filtrer )
+
+      - Notes & Évaluations 
+
+      - Examens & devoirs (Liste des examen dans un tableau avec filtres par année-scolaire, salle, serie, etc ) (Bouton pour générer un exercice via ia [Celà ouvre un form dans un popup, sélectionner la matière, la série, classe, les spécificité de l'exercice])
+
+      - Bulletins
+
+      - Classes
+
+      - Séries
+
+      - Matières
+
+      - To-do
+
+      - Notifications
+
+      - Mon profile
+
+////////////////////////////// Règles générales //////////////////////////
+
+- Respecter les clés étrangères, les tables pivots, les actions en cascade et les restriction de suppression.
+- A l'inscription d'une école, on lui attribut un sous-domaine qui va contenir sa page d'acceuil.
+- Lors de l'inscription de l'école ils choissient leur page d'acceuil et leur format de bulletin.
+- Les short code doivent correspondent aux élément enregistré dans la page à propos de l'école.
+- La plus part des formulaires dans les pages doivent être dans des popup avec bouton close, et dans d'autre page seulement si  néccéssaire. 
+- Prioriser les requêtes ajax et veiller au bon fonctionnement et à la gestion des erreurs et problème de connexion.
+- Les tableaux du projet doivent tous avoir un système de pagination 
+- Combine laravel aux dashboard vue soft UI qui est actuellement installé dans mon projet "netnote-frontend". Laravel est déjà installé avec les package comme filament, breeze(vue with inertia), ... Dans le projet 'netnote-backend' relié à xampp en local
+- Les composants de vue soft UI doivent être utilisés ou réutilisés pour construire les éléments des différentes pages, tel que les tableaux, graph, card, etc ...
+- Pour le terminal je suis sur windows et j'ai également installé cursor cli. 
+
+////////////////////////////////////////////////////////////////////   
+
+
+Instruction importante: Crée, le backend laravel nommé "netnote-backend" avec avec documentation api, tu doit bien structurer la gestion de retour json afin que les bon statut soient envoyé avec les méssages d'erreur et de succès. Les requêtes ou fonction pour afficher des tableaux doivent prévoire la gestion de pagination.
