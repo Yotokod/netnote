@@ -25,9 +25,12 @@ class SchoolPanelProvider extends PanelProvider
         return $panel
             ->id('school')
             ->path('school')
+            ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Blue,
             ])
+            ->brandName('NetNote - École')
+            ->favicon(asset('favicon.ico'))
             ->discoverResources(in: app_path('Filament/School/Resources'), for: 'App\\Filament\\School\\Resources')
             ->discoverPages(in: app_path('Filament/School/Pages'), for: 'App\\Filament\\School\\Pages')
             ->pages([

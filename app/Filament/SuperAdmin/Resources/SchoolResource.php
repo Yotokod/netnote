@@ -21,6 +21,7 @@ class SchoolResource extends Resource
     protected static ?string $navigationLabel = 'Écoles';
     protected static ?string $modelLabel = 'École';
     protected static ?string $pluralModelLabel = 'Écoles';
+    protected static ?string $navigationGroup = 'Gestion des Établissements';
 
     public static function form(Form $form): Form
     {
