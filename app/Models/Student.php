@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 
@@ -14,23 +16,24 @@ class Student extends Model
     protected $fillable = [
         'first_name',
         'last_name',
+        'matricule',
         'date_of_birth',
         'birth_place',
-        'nationality',
         'gender',
         'blood_group',
         'medical_info',
         'documents',
         'photo_path',
-        'parent_info',
         'languages',
+        'school_id',
+        'nationality_id',
+        'religion_id',
     ];
 
     protected $casts = [
         'date_of_birth' => 'date',
         'medical_info' => 'array',
         'documents' => 'array',
-        'parent_info' => 'array',
         'languages' => 'array',
     ];
 
@@ -42,6 +45,28 @@ class Student extends Model
     }
 
     // Relations
+    public function school(): BelongsTo
+    {
+        return $this->belongsTo(School::class);
+    }
+
+    public function nationality(): BelongsTo
+    {
+        return $this->belongsTo(Nationality::class);
+    }
+
+    public function religion(): BelongsTo
+    {
+        return $this->belongsTo(Religion::class);
+    }
+
+    public function guardians(): BelongsToMany
+    {
+        return $this->belongsToMany(Guardian::class, 'student_parents')
+            ->withPivot(['relationship_type', 'is_primary_contact', 'can_pick_up', 'emergency_contact'])
+            ->withTimestamps();
+    }
+
     public function enrollments(): HasMany
     {
         return $this->hasMany(Enrollment::class);

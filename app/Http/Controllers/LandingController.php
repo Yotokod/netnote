@@ -17,7 +17,10 @@ class LandingController extends Controller
             'countries_count' => Country::count(),
         ];
 
-        return view('landing.index', compact('stats'));
+        $plans = \App\Models\Plan::active()->ordered()->with('features')->get();
+        $features = \App\Models\Feature::active()->ordered()->get();
+
+        return view('landing.index', compact('stats', 'plans', 'features'));
     }
 
     public function schoolRegistration()
