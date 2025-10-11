@@ -10,9 +10,9 @@ Route::post('/inscription-ecole', [LandingController::class, 'storeSchoolRegistr
 Route::get('/inscription-reussie', [LandingController::class, 'registrationSuccess'])->name('landing.registration-success');
 
 // Routes pour les sous-domaines d'écoles
-Route::group(['middleware' => 'tenant'], function () {
+Route::group(['middleware' => [\Spatie\Multitenancy\Http\Middleware\NeedsTenant::class]], function () {
     Route::get('/', function () {
-        $tenant = app(\Spatie\Multitenancy\Models\Concerns\UsesTenantModel::class)->current();
+        $tenant = \Spatie\Multitenancy\Models\Tenant::current();
         return view('school.dashboard', compact('tenant'));
     })->name('school.dashboard');
 });
